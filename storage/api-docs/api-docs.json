@@ -1,0 +1,275 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Landmarks API",
+        "version": "1.0"
+    },
+    "paths": {
+        "/landmarks-api/canadian-provinces": {
+            "get": {
+                "description": "Return all Canadian provinces",
+                "operationId": "App\\Http\\Controllers\\CanadianProvincesController::showAll",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "500": {
+                        "description": "server error",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/landmarks-api/canadian-provinces/{slug}": {
+            "get": {
+                "description": "Return a single Canadian province by slug",
+                "operationId": "App\\Http\\Controllers\\CanadianProvincesController::showOne",
+                "parameters": [
+                    {
+                        "name": "slug",
+                        "in": "path",
+                        "description": "Slug of Canadian province to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid slug supplied"
+                    },
+                    "404": {
+                        "description": "Canadian province not found"
+                    }
+                }
+            }
+        },
+        "/landmarks-api/countries": {
+            "get": {
+                "description": "Return all countries",
+                "operationId": "App\\Http\\Controllers\\CountriesController::showAll",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "500": {
+                        "description": "server error",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/landmarks-api/countries/{slug}": {
+            "get": {
+                "description": "Return a single country by slug",
+                "operationId": "App\\Http\\Controllers\\CountriesController::showOne",
+                "parameters": [
+                    {
+                        "name": "slug",
+                        "in": "path",
+                        "description": "Slug of country to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid slug supplied"
+                    },
+                    "404": {
+                        "description": "Country not found"
+                    }
+                }
+            }
+        },
+        "/landmarks-api/high-schools": {
+            "get": {
+                "description": "Return all high schools or filter high schools by title",
+                "operationId": "App\\Http\\Controllers\\HighSchoolsController::showAll",
+                "parameters": [
+                    {
+                        "name": "filter[title]",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "minLength": 3
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "500": {
+                        "description": "server error",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/landmarks-api/high-schools/{slug}": {
+            "get": {
+                "description": "Return a single high school by slug",
+                "operationId": "App\\Http\\Controllers\\HighSchoolsController::showOne",
+                "parameters": [
+                    {
+                        "name": "slug",
+                        "in": "path",
+                        "description": "Slug of high school to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid slug supplied"
+                    },
+                    "404": {
+                        "description": "High school not found"
+                    }
+                }
+            }
+        },
+        "/landmarks-api/us-states": {
+            "get": {
+                "description": "Return all US states",
+                "operationId": "App\\Http\\Controllers\\UsStatesController::showAll",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "500": {
+                        "description": "server error",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/landmarks-api/us-states/{slug}": {
+            "get": {
+                "description": "Return a single US state by slug",
+                "operationId": "App\\Http\\Controllers\\UsStatesController::showOne",
+                "parameters": [
+                    {
+                        "name": "slug",
+                        "in": "path",
+                        "description": "Slug of US state to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid slug supplied"
+                    },
+                    "404": {
+                        "description": "US state not found"
+                    }
+                }
+            }
+        },
+        "/landmarks-api/us-zip-codes": {
+            "get": {
+                "description": "Return all US zip codes",
+                "operationId": "App\\Http\\Controllers\\UsZipCodesController::showAll",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "500": {
+                        "description": "server error",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/landmarks-api/us-zip-codes/{zip_code}": {
+            "get": {
+                "description": "Return information for a single US zip code",
+                "operationId": "App\\Http\\Controllers\\UsZipCodesController::showOne",
+                "parameters": [
+                    {
+                        "name": "zip_code",
+                        "in": "path",
+                        "description": "US zip code",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid US zip code supplied"
+                    },
+                    "404": {
+                        "description": "US zip code not found"
+                    }
+                }
+            }
+        }
+    }
+}
